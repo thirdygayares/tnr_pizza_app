@@ -54,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        linux.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                StringBuffer result = new StringBuffer();
+
+                result.append("linux Selected");
+
+                Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+
 
     }
 
