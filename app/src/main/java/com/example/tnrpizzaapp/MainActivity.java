@@ -26,26 +26,20 @@ public class MainActivity extends AppCompatActivity {
         linux = (CheckBox) findViewById(R.id.linux);
         windows = (CheckBox) findViewById(R.id.windows);
         macos = (CheckBox) findViewById(R.id.macos);
-
+        male= (RadioButton) findViewById(R.id.male);
+        female= (RadioButton) findViewById(R.id.female);
         submit.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view){
                 StringBuffer result = new StringBuffer();
-                if(linux.isChecked()){
-                    result.append("Linux selected");
+                if(female.isChecked()){
+                    result.append("female selected");
                 }
-                if(macos.isChecked()){
-                    result.append("mac OS Selected");
+                if(male.isChecked()){
+                    result.append("male Selected");
                 }
-                if(windows.isChecked()){
-                    result.append("Windows Selecters");
-                }
-
                 Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
-
             }
-
         });
 
 

@@ -54,13 +54,13 @@
                 android:orientation="vertical">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/male"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Male" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/female"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="female" />
