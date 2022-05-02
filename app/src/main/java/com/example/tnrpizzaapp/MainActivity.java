@@ -28,19 +28,31 @@ public class MainActivity extends AppCompatActivity {
         macos = (CheckBox) findViewById(R.id.macos);
         male= (RadioButton) findViewById(R.id.male);
         female= (RadioButton) findViewById(R.id.female);
-        submit.setOnClickListener(new View.OnClickListener(){
+
+
+        male.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 StringBuffer result = new StringBuffer();
-                if(female.isChecked()){
-                    result.append("female selected");
-                }
-                if(male.isChecked()){
+
                     result.append("male Selected");
-                }
+
                 Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
             }
         });
+
+
+        female.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                StringBuffer result = new StringBuffer();
+
+                result.append("female Selected");
+
+                Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+
 
 
     }
