@@ -7,6 +7,7 @@
     android:background="#EFE4E4"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -14,24 +15,25 @@
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Pizza"
-        android:textColor="#4CAF50"
-        android:textSize="25sp"
+        android:textColor="#6EA170"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/pizzaGroup"
-        android:layout_width="285dp"
-        android:layout_height="65dp"
+        android:layout_width="280dp"
+        android:layout_height="39dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:elevation="10dp"
         android:orientation="horizontal"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -49,36 +51,37 @@
 
     </RadioGroup>
 
-
     <TextView
         android:id="@+id/sizeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="Size"
-        android:textColor="#4CAF50"
-        android:textSize="25sp"
+        android:textColor="#FF6EA170"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pizzaGroup" />
 
+
     <RadioGroup
         android:id="@+id/sizeGroup"
-        android:layout_width="375dp"
-        android:layout_height="62dp"
+        android:layout_width="343dp"
+        android:layout_height="42dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
+        android:elevation="10dp"
         android:orientation="horizontal"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sizeText">
 
         <RadioButton
-            android:id="@+id/small"
+            android:id="@+id/smallSize"
             android:layout_width="113dp"
             android:layout_height="wrap_content"
 
@@ -100,7 +103,6 @@
 
     </RadioGroup>
 
-
     <TextView
         android:id="@+id/crustType"
         android:layout_width="wrap_content"
@@ -108,25 +110,25 @@
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-black"
         android:text="Crust Type"
-        android:textColor="#4CAF50"
-        android:textSize="25sp"
+        android:textColor="#FF6EA170"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toBottomOf="@+id/sizeGroup" />
 
     <RadioGroup
         android:id="@+id/crustGroup"
-        android:layout_width="285dp"
-        android:layout_height="65dp"
+        android:layout_width="274dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crustType">
 
@@ -151,10 +153,10 @@
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-black"
         android:text="Extra Toppings"
-        android:textColor="#4CAF50"
-        android:textSize="25sp"
+        android:textColor="#FF6EA170"
+        android:textSize=" 15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crustGroup" />
 
@@ -245,19 +247,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="20sp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintVertical_bias="0.609"
+        tools:layout_editor_absoluteX="-75dp">
 
         <TextView
             android:id="@+id/totalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="44dp"
             android:layout_marginEnd="100dp"
-            android:text="0"
+            android:text="300"
+
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/totalWordDisplay"
@@ -270,8 +275,9 @@
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-black"
             android:text="TOTAL:"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.326"
+            app:layout_constraintHorizontal_bias="0.163"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/extraToppingsOrderDisplay" />
 
@@ -279,21 +285,23 @@
             android:id="@+id/ExtratoppingPriceDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintHorizontal_bias="0.522"
             app:layout_constraintStart_toEndOf="@+id/extraToppingsWordDisplay"
-            app:layout_constraintTop_toBottomOf="@+id/orderPizzaPriceDisplay" />
+            app:layout_constraintTop_toBottomOf="@+id/orderPizzaPriceDisplay"
+            tools:text="300" />
 
         <TextView
             android:id="@+id/yourOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:text="Your Oders is:"
             android:textSize="16sp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.087"
+            app:layout_constraintHorizontal_bias="0.059"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -315,7 +323,7 @@
             android:layout_marginTop="20dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.179"
+            app:layout_constraintHorizontal_bias="0.191"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/yourOrder" />
 
@@ -323,11 +331,12 @@
             android:id="@+id/orderPizzaPriceDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="88dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.623"
+            app:layout_constraintHorizontal_bias="0.653"
             app:layout_constraintStart_toEndOf="@+id/orderPizzaNameDisplay"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="300" />
 
         <TextView
             android:id="@+id/extraToppingsWordDisplay"
@@ -335,8 +344,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Extra Toppings"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintHorizontal_bias="0.191"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sizeCrustDisplay" />
 
@@ -347,7 +357,7 @@
             android:layout_marginTop="4dp"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintHorizontal_bias="0.249"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/extraToppingsWordDisplay" />
     </androidx.constraintlayout.widget.ConstraintLayout>

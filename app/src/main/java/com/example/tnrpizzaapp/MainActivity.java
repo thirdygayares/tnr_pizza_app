@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         pizzaGroup = (RadioGroup) findViewById(R.id.pizzaGroup);
         sizeGroup = (RadioGroup) findViewById(R.id.sizeGroup);
         crustGroup = (RadioGroup) findViewById(R.id.crustGroup);
-        small = (RadioButton) findViewById(R.id.small);
+        small = (RadioButton) findViewById(R.id.smallSize);
         medium = (RadioButton) findViewById(R.id.medium);
         large = (RadioButton) findViewById(R.id.large);
         hawaiian = (RadioButton) findViewById(R.id.hawaiian);
