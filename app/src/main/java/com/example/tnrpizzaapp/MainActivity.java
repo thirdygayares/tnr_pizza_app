@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox onion,tomatoes,pineapple,extraCheese,mushroom;
     RadioGroup pizzaGroup,sizeGroup,crustGroup;
     RadioButton small,medium,large,hawaiian,hamCheese,thin,thick;
-    TextView yourOrder,orderPizzaNameDisplay,sizeCrustDisplay,orderPizzaPriceDisplay,extraToppingsWordDisplay,extraToppingsOrderDisplay,ExtratoppingPriceDisplay,totalWordDisplay,totalPrice;
+    TextView orderPizzaNameDisplay,sizeCrustDisplay,orderPizzaPriceDisplay,extraToppingsOrderDisplay,ExtratoppingPriceDisplay,totalWordDisplay,totalPrice;
     double pizzaPrize,extraToppings = 0, total=0, sizePrice  = 0;
 
 
@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         hamCheese = (RadioButton) findViewById(R.id.hamCheese);
         thin = (RadioButton) findViewById(R.id.thin);
         thick = (RadioButton) findViewById(R.id.thick);
-        yourOrder = (TextView) findViewById(R.id.yourOrder);
+
         orderPizzaNameDisplay = (TextView) findViewById(R.id.orderPizzaNameDisplay);
         sizeCrustDisplay = (TextView) findViewById(R.id.sizeCrustDisplay);
         orderPizzaPriceDisplay = (TextView) findViewById(R.id.orderPizzaPriceDisplay);
-        extraToppingsWordDisplay = (TextView) findViewById(R.id.extraToppingsWordDisplay);
+
         ExtratoppingPriceDisplay = (TextView) findViewById(R.id.ExtratoppingPriceDisplay);
         extraToppingsOrderDisplay = (TextView) findViewById(R.id.extraToppingsOrderDisplay);
         totalWordDisplay = (TextView) findViewById(R.id.totalWordDisplay);
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 pineapple.setChecked(false);
                 extraCheese.setChecked(false);
                 mushroom.setChecked(false);
-
+                //try this
             }
         });
 
