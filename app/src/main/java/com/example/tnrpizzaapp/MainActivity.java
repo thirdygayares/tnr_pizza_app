@@ -14,14 +14,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button processOrder,newOrder;
-    CheckBox onion,tomatoes,pineapple,extraCheese,mushroom;
-    RadioGroup pizzaGroup,sizeGroup,crustGroup;
-    RadioButton small,medium,large,hawaiian,hamCheese,thin,thick;
-    TextView yourOrder,orderPizzaNameDisplay,sizeCrustDisplay,orderPizzaPriceDisplay,extraToppingsWordDisplay,extraToppingsOrderDisplay,ExtratoppingPriceDisplay,totalWordDisplay,totalPrice;
-    double pizzaPrize,extraToppings = 0, total=0, sizePrice  = 0;
-
-    //try comment
+    Button orderBtn,anotherOrderBtn;
+    CheckBox onionCkbx,tomatoeCkbx,pineappleCkbx,xtrCheeseCkbx,mushroomCkbx;
+    RadioGroup radioGroup1,radioGroup2,radioGroup3;
+    RadioButton small,medium,large,hawaiian,hamCheese,thinBtn,thickBtn;
+    TextView textOrder,orderPizzaNameDisplay,crustPrintTxtView,orderPizzaPriceDisplay,xtraToppingsPrint,xtraToppingsOrderPrint,xtraToppingsPricePrint,totalDisplayTxtView,totalPricePrint;
+    double xtraToppingsPrice = 0, totalPrice=0, priceOnSize  = 0;
 
 
     @Override
@@ -29,32 +27,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        processOrder = (Button) findViewById(R.id.processOrder);
-        newOrder = (Button) findViewById(R.id.newOrder);
-        onion = (CheckBox) findViewById(R.id.onion);
-        tomatoes = (CheckBox) findViewById(R.id.tomatoes);
-        pineapple = (CheckBox) findViewById(R.id.pineapple);
-        extraCheese = (CheckBox) findViewById(R.id.extraCheese);
-        mushroom = (CheckBox) findViewById(R.id.mushroom);
-        pizzaGroup = (RadioGroup) findViewById(R.id.pizzaGroup);
-        sizeGroup = (RadioGroup) findViewById(R.id.sizeGroup);
-        crustGroup = (RadioGroup) findViewById(R.id.crustGroup);
+        orderBtn = (Button) findViewById(R.id.orderBtn);
+        anotherOrderBtn = (Button) findViewById(R.id.anotherOrderBtn);
+        onionCkbx = (CheckBox) findViewById(R.id.onionCkbx);
+        tomatoeCkbx = (CheckBox) findViewById(R.id.tomatoeCkbx);
+        pineappleCkbx = (CheckBox) findViewById(R.id.pineappleCkbx);
+        xtrCheeseCkbx = (CheckBox) findViewById(R.id.xtrCheeseCkbx);
+        mushroomCkbx = (CheckBox) findViewById(R.id.mushroomCkbx);
+        radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup1);
+        radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup2);
+        radioGroup3 = (RadioGroup) findViewById(R.id.radioGroup3);
         small = (RadioButton) findViewById(R.id.small);
         medium = (RadioButton) findViewById(R.id.medium);
         large = (RadioButton) findViewById(R.id.large);
         hawaiian = (RadioButton) findViewById(R.id.hawaiian);
         hamCheese = (RadioButton) findViewById(R.id.hamCheese);
-        thin = (RadioButton) findViewById(R.id.thin);
-        thick = (RadioButton) findViewById(R.id.thick);
-        yourOrder = (TextView) findViewById(R.id.yourOrder);
+        thinBtn = (RadioButton) findViewById(R.id.thinBtn);
+        thickBtn = (RadioButton) findViewById(R.id.thickBtn);
+        textOrder = (TextView) findViewById(R.id.textOrder);
         orderPizzaNameDisplay = (TextView) findViewById(R.id.orderPizzaNameDisplay);
-        sizeCrustDisplay = (TextView) findViewById(R.id.sizeCrustDisplay);
+        crustPrintTxtView = (TextView) findViewById(R.id.crustPrintTxtView);
         orderPizzaPriceDisplay = (TextView) findViewById(R.id.orderPizzaPriceDisplay);
-        extraToppingsWordDisplay = (TextView) findViewById(R.id.extraToppingsWordDisplay);
-        ExtratoppingPriceDisplay = (TextView) findViewById(R.id.ExtratoppingPriceDisplay);
-        extraToppingsOrderDisplay = (TextView) findViewById(R.id.extraToppingsOrderDisplay);
-        totalWordDisplay = (TextView) findViewById(R.id.totalWordDisplay);
-        totalPrice = (TextView) findViewById(R.id.totalPrice);
+        xtraToppingsPrint = (TextView) findViewById(R.id.xtraToppingsPrint);
+        xtraToppingsPricePrint = (TextView) findViewById(R.id.xtraToppingsPricePrint);
+        xtraToppingsOrderPrint = (TextView) findViewById(R.id.xtraToppingsOrderPrint);
+        totalDisplayTxtView = (TextView) findViewById(R.id.totalDisplayTxtView);
+        totalPricePrint = (TextView) findViewById(R.id.totalPricePrint);
 
 
     }
@@ -63,108 +61,108 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
 
         super.onResume();
-        //2nd comment
-        processOrder.setOnClickListener(new View.OnClickListener() {
+
+        orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                StringBuffer sizeText = new StringBuffer();
-                StringBuffer extraToppingsText = new StringBuffer();
+                StringBuffer sizelang = new StringBuffer();
+                StringBuffer xtraToppingslang = new StringBuffer();
 
                 if(small.isChecked()){
-                    sizeText.append("(Small& ");
-                    pizzaChoose(100);
+                    sizelang.append("(Small& ");
+                    pizzaSize(100);
                 }
 
                 if(medium.isChecked()){
-                    sizeText.append("(Medium& ");
-                    pizzaChoose(150);
+                    sizelang.append("(Medium& ");
+                    pizzaSize(150);
                 }
 
                 if(large.isChecked()){
-                    sizeText.append("(Large& ");
-                    pizzaChoose(200);
+                    sizelang.append("(Large& ");
+                    pizzaSize(200);
                 }
 
 
-                if(thin.isChecked()){
-                    sizeText.append("thin)");
-                    pizzaPrice(sizePrice);
+                if(thinBtn.isChecked()){
+                    sizelang.append("thin)");
+                    itemPrice(priceOnSize);
                 }
 
-                if(thick.isChecked()){
-                    sizeText.append("thick)");
-                    pizzaPrice(sizePrice,0.5);
+                if(thickBtn.isChecked()){
+                    sizelang.append("thick)");
+                    itemPrice(priceOnSize,0.5);
                 }
 
 
-                if(extraCheese.isChecked()){
+                if(xtrCheeseCkbx.isChecked()){
                     extraToppings(20);
-                    extraToppingsText.append(" Extra Cheese ");
+                    xtraToppingslang.append(" Extra Cheese ");
                 }
 
-                if(mushroom.isChecked()){
+                if(mushroomCkbx.isChecked()){
                     extraToppings(20);
-                    extraToppingsText.append(" Mushroom ");
+                    xtraToppingslang.append(" Mushroom ");
                 }
 
-                if(onion.isChecked()){
+                if(onionCkbx.isChecked()){
                     extraToppings(10);
-                    extraToppingsText.append(" Onion ");
+                    xtraToppingslang.append(" Onion ");
                 }
 
-                if(tomatoes.isChecked()){
+                if(tomatoeCkbx.isChecked()){
                     extraToppings(10);
-                    extraToppingsText.append(" Tomatoes ");
+                    xtraToppingslang.append(" Tomatoes ");
                 }
 
-                if(pineapple.isChecked()){
+                if(pineappleCkbx.isChecked()){
                     extraToppings(15);
-                    extraToppingsText.append(" Pineapple ");
+                    xtraToppingslang.append(" Pineapple ");
                 }
 
 
-                Log.v("total",String.valueOf(sizePrice));
-                orderPizzaPriceDisplay.setText(String.valueOf(sizePrice));
-                Log.v("total",String.valueOf(sizeText));
-                sizeCrustDisplay.setText(String.valueOf(sizeText));
-                Log.v("total",String.valueOf(extraToppingsText));
-                extraToppingsOrderDisplay.setText(String.valueOf(extraToppingsText));
-                Log.v("total",String.valueOf(extraToppings));
-                ExtratoppingPriceDisplay.setText(String.valueOf(extraToppings));
+                Log.v("total",String.valueOf(priceOnSize));
+                orderPizzaPriceDisplay.setText(String.valueOf(priceOnSize));
+                Log.v("total",String.valueOf(sizelang));
+                crustPrintTxtView.setText(String.valueOf(sizelang));
+                Log.v("total",String.valueOf(xtraToppingslang));
+                xtraToppingsOrderPrint.setText(String.valueOf(xtraToppingslang));
+                Log.v("total",String.valueOf(xtraToppingsPrice));
+                xtraToppingsPricePrint.setText(String.valueOf(xtraToppingsPrice));
 
-                total(sizePrice,extraToppings);
-                totalPrice.setText(String.valueOf(total));
-                sizePrice = 0;
-                extraToppings = 0;
+                total(priceOnSize,xtraToppingsPrice);
+                totalPricePrint.setText(String.valueOf(totalPrice));
+                priceOnSize = 0;
+                xtraToppingsPrice = 0;
 
             }
         });
 
 
-        newOrder.setOnClickListener(new View.OnClickListener() {
+        anotherOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                total = 0;
+                totalPrice = 0;
 
 
                 orderPizzaPriceDisplay.setText("");
-                sizeCrustDisplay.setText("");
-                extraToppingsOrderDisplay.setText("");
-                ExtratoppingPriceDisplay.setText("");
-                totalPrice.setText("0");
+                crustPrintTxtView.setText("");
+                xtraToppingsOrderPrint.setText("");
+                xtraToppingsPricePrint.setText("");
+                totalPricePrint.setText("0");
                 hawaiian.setChecked(false);
                 hamCheese.setChecked(false);
                 small.setChecked(false);
                 medium.setChecked(false);
                 large.setChecked(false);
-                thin.setChecked(false);
-                thick.setChecked(false);
-                tomatoes.setChecked(false);
-                onion.setChecked(false);
-                pineapple.setChecked(false);
-                extraCheese.setChecked(false);
-                mushroom.setChecked(false);
+                thinBtn.setChecked(false);
+                thickBtn.setChecked(false);
+                tomatoeCkbx.setChecked(false);
+                onionCkbx.setChecked(false);
+                pineappleCkbx.setChecked(false);
+                xtrCheeseCkbx.setChecked(false);
+                mushroomCkbx.setChecked(false);
 
             }
         });
@@ -172,34 +170,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void pizzaPrice(double pizza){
-        this.sizePrice = pizza;
+    public void itemPrice(double pizza){
+        this.priceOnSize = pizza;
     }
 
-    public void pizzaPrice(double pizza,double thick){
-        this.sizePrice += pizza * thick;
+    public void itemPrice(double pizza,double thick){
+        this.priceOnSize += pizza * thick;
     }
 
-    public void pizzaChoose(double sizeChecked){
+    public void pizzaSize(double forPriceSize){
         StringBuffer pizzaname = new StringBuffer();
         if(hawaiian.isChecked()){
             pizzaname.append("Hawaiian");
-            this.sizePrice += sizeChecked;
+            this.priceOnSize += forPriceSize;
         }
          if(hamCheese.isChecked()){
              pizzaname.append("Ham & Cheese");
-            this.sizePrice += sizeChecked * 2;
+            this.priceOnSize += forPriceSize * 2;
         }
         orderPizzaNameDisplay.setText(String.valueOf(pizzaname));
 
     }
 
-    public void extraToppings(double extraToppings){
-        this.extraToppings += extraToppings;
+    public void extraToppings(double toppingPriced){
+        this.xtraToppingsPrice += toppingPriced;
     }
 
     public void total(double pizza,double toppings){
-       this.total = pizza + toppings;
+       this.totalPrice = pizza + toppings;
     }
 
 
