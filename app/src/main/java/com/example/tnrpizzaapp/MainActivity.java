@@ -8,66 +8,25 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button submit;
-    CheckBox linux,windows,macos;
-    RadioGroup group1;
-    RadioButton male,female;
+    Button processOrder,newOrder;
+    CheckBox onion,tomatoes,pineapple,extraCheese,mushroom;
+    RadioGroup pizzaGroup,sizeGroup,crustGroup;
+    RadioButton small,medium,large,hawaiian,hamCheese,thin,thick;
+    TextView yourOrder,orderPizzaNameDisplay,sizeCrustDisplay,orderPizzaPriceDisplay,extraToppingsWordDisplay,extraToppingsOrderDisplay,totalWordDisplay,totalPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        submit = (Button) findViewById(R.id.submit);
-        linux = (CheckBox) findViewById(R.id.linux);
-        windows = (CheckBox) findViewById(R.id.windows);
-        macos = (CheckBox) findViewById(R.id.macos);
-        male= (RadioButton) findViewById(R.id.male);
-        female= (RadioButton) findViewById(R.id.female);
-
-
-        male.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                StringBuffer result = new StringBuffer();
-
-                    result.append("male Selected");
-
-                Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        female.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                StringBuffer result = new StringBuffer();
-
-                result.append("female Selected");
-
-                Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        linux.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                StringBuffer result = new StringBuffer();
-
-                result.append("linux Selected");
-
-                Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-
     }
+
+
+
 
 
 }
