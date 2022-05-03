@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     TextView yourOrder,orderPizzaNameDisplay,sizeCrustDisplay,orderPizzaPriceDisplay,extraToppingsWordDisplay,extraToppingsOrderDisplay,ExtratoppingPriceDisplay,totalWordDisplay,totalPrice;
     double pizzaPrize,extraToppings = 0, total=0, sizePrice  = 0;
 
+    //try comment
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
 
         super.onResume();
-
+        //2nd comment
         processOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
